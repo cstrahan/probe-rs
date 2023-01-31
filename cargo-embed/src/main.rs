@@ -599,7 +599,7 @@ fn main_try() -> Result<()> {
                     let chip_name = config.general.chip.as_deref().unwrap_or_default();
 
                     let timestamp_millis =
-                        OffsetDateTime::now_local()?.unix_timestamp_nanos() / 1_000_000;
+                        OffsetDateTime::now_utc().unix_timestamp_nanos() / 1_000_000;
 
                     let logname = format!("{name}_{chip_name}_{timestamp_millis}");
                     let mut app = rttui::app::App::new(rtt, &config, logname)?;

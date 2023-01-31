@@ -992,7 +992,8 @@ impl RawDapAccess for CmsisDap {
 
     // :)
     fn blah(&mut self) -> Result<(), DebugProbeError> {
-        let ir_lengths = vec![4, 5];
+        let ir_lengths = vec![4];
+        // let ir_lengths = vec![4, 5];
         self.send_jtag_configure(JtagConfigureRequest::new(ir_lengths)?)?;
 
         return Ok(());
